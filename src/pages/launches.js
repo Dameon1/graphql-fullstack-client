@@ -7,19 +7,6 @@ import Header from '../components/header';
 import Button from '../components/button';
 import Loading from '../components/loading';
 
-const GET_LAUNCHES = gql`
-  query launchList($after: String) {
-    launches(after: $after) {
-      cursor
-      hasMore
-      launches {
-        ...LaunchTile
-      }
-    }
-  }
-  ${LAUNCH_TILE_DATA}
-`;
-
 export const LAUNCH_TILE_DATA = gql`
   fragment LaunchTile on Launch {
     id
@@ -35,11 +22,26 @@ export const LAUNCH_TILE_DATA = gql`
   }
 `;
 
+const GET_LAUNCHES = gql`
+  query launchList($after: String) {
+    launches(after: $after) {
+      cursor
+      hasMore
+      launches {
+        ...LaunchTile
+      }
+    }
+  }
+  ${LAUNCH_TILE_DATA}
+`;
+
+
+
 export default function Launches() {
   return (
     <Query
       query={GET_LAUNCHES}>
-        {(getLaunches, { data, loading, error, fetchMore}) => {
+        {({ data, loading, error, fetchMore}) => {
           if (loading) return <Loading />;
           if (error) return <p>ERROR</p>;
 

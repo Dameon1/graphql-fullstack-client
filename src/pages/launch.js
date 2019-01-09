@@ -5,7 +5,7 @@ import { LAUNCH_TILE_DATA } from './launches';
 
 import Loading from '../components/loading';
 import Header from '../components/header';
-import ActionButton from '..containers/action-button';
+import ActionButton from '../containers/action-button';
 import LaunchDetail from '../components/launch-detail';
 
 export const GET_LAUNCH_DETAILS = gql`
