@@ -19,7 +19,7 @@ export const typeDefs = gql`
 export const resolvers = {
   Launch: {
     isInCart: (launch, _, { cache }) => {
-      const { cartItems } = cache.readQUery({ query: GET_CART_ITEMS});
+      const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS});
       return cartItems.includes(launch.id);
     }
   },

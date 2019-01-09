@@ -18,7 +18,7 @@ const cache = new InMemoryCache();
 const client = new ApolloClient({
   cache,
   link: new HttpLink({
-    uri: "https://fullstack-tutorial-server-axgxsozikg.now.sh/",
+    uri: "https://fullstack-tutorial-server-guhpkahglz.now.sh",
     headers: {
       authorization: localStorage.getItem('token'),
       'client-name': 'Space Explorer [web]',
