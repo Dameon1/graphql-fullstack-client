@@ -40,6 +40,7 @@ export default class LoginForm extends Component {
             data-testid="login-input"
             onChange={this.onChange}
           />
+          <p>Use: daisy@apollographql.com</p>
           <Button type="submit">Log in</Button>
         </StyledForm>
       </Container>
